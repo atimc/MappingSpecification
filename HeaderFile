@@ -1,0 +1,31 @@
+Example Header File
+floatn43w072_1.hdr
+*****************************************
+ncols         3612
+nrows         3612
+xllcorner     -72.00166666667
+yllcorner     41.99833333333
+cellsize      0.000277777777778
+NODATA_value  -9999
+byteorder     LSBFIRST
+*****************************************
+
+Number of Columns and Rows in the data....
+ncols
+nrows
+
+Latitude and Longitude of Lower Left Corner. 
+xllcorner = Longitude. ( negative is West... Positive is East of Greenwich )
+yllcorner = Latitude.  ( Negative is south of Equator. Positive is north )
+
+cellsize....   UNDONE This confuses me still, needs research.  Size between each pixel.?
+                     This does not account for lessening size as you move north in longitude.
+                    Some adjustment may be needed here.
+                    What is known is..
+                    cellsize * ncols = 1.003333334136 so this fits in as a possible size in degree of each pixel.(cell)
+                    
+                    
+  NODATA_value is simply a cell where data was unavailable and it will hold this value.
+  
+  byteorder     Big Endian or Little Endian as the float is written on disk.
+  
