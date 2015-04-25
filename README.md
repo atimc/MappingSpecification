@@ -3,6 +3,8 @@ Spec for interpreting data available on USGS website... www.usgs.org
 
 Interprete freely available data from www.usgs.org
 
+The programming language will be Java and I will specifically use the javafx libraries.
+
 Draw a map with visible cues to slope with grades being marked and decernable in
 1 degree implements from 0-10 or 20.
 
