@@ -1,0 +1,44 @@
+Float Grid Data for each cell in the map..  
+03/23/2015  04:57 PM        45,258,553 n43w072.zip
+contains
+01/29/2014  03:02 PM        52,186,176 floatn43w072_1.flt
+
+
+This file is an array of floats.
+Each float is the height in meters of a coordinate in the map.
+See header file spec for source of number of columns and rows.
+In this example,  3612 each.
+
+3612 * 3612 * sizeof(float) = 52,186,176.
+
+This file is raw floats in Little Endian order.
+
+Read each float in (52 mb) as the base of your map.
+
+Each cell will be assigned 9 pixels with the center will for holder purposes
+be a gray scale of the elevation between min and max elevations in this grid.
+gray scale is measured from 0.0-1.0 so 
+gray would be ( height - minheight ) / ( maxHeight-minHeight )
+
+Each surrounding pixel will be colored according to slope of the land.
+if slope is
+%Slope
+0-1       Light Green
+1-2       Medium Green
+2-3       Dark Green
+3-4       Yellow
+4-5       Ochre
+5-6       Orange
+6-7       Light red
+7-8       red
+8-9       Dark Red
+9-10      lt Brown
+10+       Dark Brown
+
+if the slope is down, the color will be darkened with the Color.darken() call.
+
+
+Water....
+   Water will be identified as area 10 pixels or greater where 
+   A : The slope is < .001 ( 1 tenth of 1% )
+   B : any down hill is less then 5% of the circumference.
